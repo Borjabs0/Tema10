@@ -26,7 +26,7 @@ public class Cola<T> implements ICola<T> {
     public int size() {
         return cola.size();
     }
-
+    //Devuelve el ultimo elemento de la cola
     @Override
     public T peek() {
         if (cola.isEmpty()){
