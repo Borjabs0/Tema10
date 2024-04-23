@@ -3,7 +3,11 @@ package com.borjabolufer.ejercicios.ejercicio04;
 import java.util.ArrayList;
 
 public class Cola<T> implements ICola<T> {
-    ArrayList<T> cola = new ArrayList<T>();
+    private final ArrayList<T> cola;
+
+    public Cola() {
+        this.cola = new ArrayList<T>();
+    }
 
     @Override
     public boolean add(T value) {
