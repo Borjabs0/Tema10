@@ -2,7 +2,7 @@ package com.borjabolufer.ejercicios.ejercicio05;
 import java.util.Objects;
 
 public class Paciente {
-    private static int ID_AUTONUMERICO = 0;
+    private static int AUTONUMERICO = 1;
     private int id;
     private final String nombre;
     private final Genero genero;
@@ -11,7 +11,7 @@ public class Paciente {
     private final double peso;
 
     public Paciente(String nombre, Genero genero, String fechaNacimiento, double altura, double peso) {
-        this.id = ID_AUTONUMERICO++;
+        this.id = AUTONUMERICO++;
         this.nombre = nombre;
         this.genero = genero;
         this.fechaNacimiento = fechaNacimiento;
@@ -73,12 +73,11 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente" +id+ "[" +
+        return  "\n"+"Paciente" +id +
                 ", nombre='" + nombre + '\'' +
                 ", genero=" + genero +
                 ", fechaNacimiento=" + fechaNacimiento +
                 ", altura=" + altura +
-                ", peso=" + peso +
-                ']';
+                ", peso= " + peso ;
     }
 }

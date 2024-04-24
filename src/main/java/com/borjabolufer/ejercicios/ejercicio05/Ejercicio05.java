@@ -35,7 +35,6 @@ public class Ejercicio05 {
             String fechaNacimiento = pacientes.get(i).getFechaNacimiento();
             LocalDate fechaNacimientoLocal = LocalDate.parse(fechaNacimiento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             edad = Period.between(fechaNacimientoLocal, fechaActual).getYears();
-            System.out.println("Fecha de nacimiento: " + fechaNacimiento + ", Edad: " + edad);
         }
         return edad;
     }
@@ -44,6 +43,7 @@ public class Ejercicio05 {
         int[] indices = new int[2];
         int indiceMajor = 0;
         int indiceMenor = 0;
+
 
         return indices;
     }

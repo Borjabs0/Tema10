@@ -1,16 +1,6 @@
 package com.borjabolufer;
 
-import com.borjabolufer.ejercicios.Diccionario;
-import com.borjabolufer.ejercicios.Ejercicio01;
-import com.borjabolufer.ejercicios.ejercicio02.Ejercicio02;
-import com.borjabolufer.ejercicios.ejercicio03.Pila;
-import com.borjabolufer.ejercicios.ejercicio04.Cola;
-import com.borjabolufer.ejercicios.ejercicio04.ICola;
-import com.borjabolufer.ejercicios.ejercicio05.Ejercicio05;
-
-import javax.lang.model.element.Element;
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.borjabolufer.ejercicios.Ejercicio07;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,7 +34,9 @@ public class Main {
 //        cola.add(13);
 //        cola.add(14);
 //        System.out.println(cola);
-          Ejercicio05 ejercicio05 = new Ejercicio05();
+//        Ejercicio05 ejercicio05 = new Ejercicio05();
+//        Ejercicio06 ejercicio06 = new Ejercicio06();
+//        Ejercicio07 ejercicio07 = new Ejercicio07();
 
     }
 }
