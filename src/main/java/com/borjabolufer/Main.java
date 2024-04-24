@@ -6,6 +6,7 @@ import com.borjabolufer.ejercicios.ejercicio02.Ejercicio02;
 import com.borjabolufer.ejercicios.ejercicio03.Pila;
 import com.borjabolufer.ejercicios.ejercicio04.Cola;
 import com.borjabolufer.ejercicios.ejercicio04.ICola;
+import com.borjabolufer.ejercicios.ejercicio05.Ejercicio05;
 
 import javax.lang.model.element.Element;
 import java.util.ArrayList;
@@ -43,5 +44,7 @@ public class Main {
 //        cola.add(13);
 //        cola.add(14);
 //        System.out.println(cola);
+          Ejercicio05 ejercicio05 = new Ejercicio05();
+
     }
 }

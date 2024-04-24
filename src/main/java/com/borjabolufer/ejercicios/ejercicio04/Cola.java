@@ -40,7 +40,6 @@ public class Cola<T> implements ICola<T> {
         System.out.println("La cola esta vacia");
         return cola.isEmpty();
     }
-
     @Override
     public String toString() {
         return "Cola{" +
