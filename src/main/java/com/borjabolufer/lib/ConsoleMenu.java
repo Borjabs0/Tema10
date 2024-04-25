@@ -74,9 +74,9 @@ public class ConsoleMenu {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("*******************\n");
-        sb.append("***  ").append(texto).append("  ***\n");
-        sb.append("*******************\n");
+        sb.append("*************************\n");
+        sb.append("").append(texto).append("\n");
+        sb.append("*************************\n");
         for (int i = 0; i < numOpciones - 1; i++) {
             sb.append(i + 1).append(". ").append(opciones[i].texto).append("\n");//Ajustar con String format
         }
