@@ -19,19 +19,19 @@ public class Ejercicio07 {
 
         // Inicializamos el HashMap con los tipos de cambio
         System.out.println("Cambio del euro de las siguientes monedas:");
-        cambioMoneda.put("USD (Dólar USA)", 1.07);
-        cambioMoneda.put("GBP (Libra esterlina)", 0.86);
-        cambioMoneda.put("INR (Rupia India)", 88.42);
-        cambioMoneda.put("AUD (Dólar Australiano)", 1.57);
-        cambioMoneda.put("CAD (Dólar Canadiense)", 1.48);
-        cambioMoneda.put("ARS (Peso Argentino)", 116.25);
-        cambioMoneda.put("BOB (Boliviano Boliviano)", 8.17);
-        cambioMoneda.put("CLP (Peso Chileno)", 872.50);
-        cambioMoneda.put("VEZ (Peso Colombiano)", 4_000_000.0);
-        cambioMoneda.put("CRC (Colón Costarricense)", 717.50);
-        cambioMoneda.put("CUP (Peso Cubano)", 26.50);
-        cambioMoneda.put("DOP (Peso Dominicano)", 68.50);
-        cambioMoneda.put("MXN (Peso Mexicano)", 24.50);
+        cambioMoneda.put("USD", 1.07);
+        cambioMoneda.put("GBP", 0.86);
+        cambioMoneda.put("INR", 89.24);
+        cambioMoneda.put("AUD", 1.65);
+        cambioMoneda.put("CAD", 1.47);
+        cambioMoneda.put("ARS", 936.53);
+        cambioMoneda.put("BOB", 7.42);
+        cambioMoneda.put("CLP", 1_018.14);
+        cambioMoneda.put("VEZ", 38.9657);
+        cambioMoneda.put("CRC", 538.66);
+        cambioMoneda.put("CUP", 25.72);
+        cambioMoneda.put("DOP", 62.96);
+        cambioMoneda.put("MXN", 18.47);
 
         // Solicitamos al usuario la cantidad de euros a convertir.
         System.out.println("Introduce una cantidad de euros a cambiar por otras monedas");
@@ -42,14 +42,14 @@ public class Ejercicio07 {
 
         // Recorremos el HashMap para realizar las conversiones
         for (Map.Entry<String, Double> conversor : cambioMoneda.entrySet()) {
-            // Obtenemos el tipo de cambio de la moneda actual
-            Double monedaAConvertir = conversor.getValue();
+                // Obtenemos el tipo de cambio de la moneda actual
+                Double monedaAConvertir = conversor.getValue();
 
-            // Calculamos el total a convertir en la moneda actual
-            double totalCambio = montoEuro * monedaAConvertir;
+                // Calculamos el total a convertir en la moneda actual
+                double totalCambio = montoEuro * monedaAConvertir;
 
-            // Mostramos el resultado de la conversión
-            System.out.println("La conversión de Euros a " + conversor.getKey() + " es: " + totalCambio);
+                // Mostramos el resultado de la conversión
+                System.out.println("La conversión de Euros a " +  conversor.getKey() + " es: " + totalCambio);
         }
     }
 }
