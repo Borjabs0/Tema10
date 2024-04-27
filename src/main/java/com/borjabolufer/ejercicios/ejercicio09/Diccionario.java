@@ -1,9 +1,8 @@
-package com.borjabolufer.ejercicios.ejercicio08;
+package com.borjabolufer.ejercicios.ejercicio09;
 
 import com.borjabolufer.lib.LibIO;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Esta clase implementa un diccionario básico que permite agregar, modificar, eliminar y consultar palabras y sus definiciones.
@@ -17,13 +16,17 @@ public class Diccionario {
     /**
      * Diccionario que almacena las palabras y sus definiciones.
      */
-    private final Map<String, String> diccionario;
+    public final Map<String, String> diccionario;
+    private final Random random;
+
 
     /**
      * Constructor que inicializa el diccionario con algunas palabras y sus definiciones
      */
     public Diccionario() {
         this.diccionario = new HashMap<>();
+        this.random = new Random();
+
         diccionario.put("Informática", "Conjunto de conocimientos científicos y técnicas que hacen posible el tratamiento automático de la información por medio de computadoras.");
         diccionario.put("Geografía", "Estudio de la superficie terrestre, sus características físicas, climáticas y humanas.");
         diccionario.put("Biología", "Ciencia que se ocupa del estudio de los seres vivos y sus procesos vitales.");
@@ -40,74 +43,55 @@ public class Diccionario {
     /**
      * Permite agregar una nueva palabra y su definicion en el diccionario
      */
-    public void anyadirPalabra() {
-        String palabra;
-        do {
-            palabra = LibIO.solicitarString("Introducé una palabra en el diccionario (o sal con exit): ", 2, 50);
-            if (palabra.equals("exit")) {
-                break;
-            }
-            if (diccionario.containsKey(palabra)) {
-                System.err.println("La palabra ya existe en el diccionario.");
-                System.out.println("¡¡Vuelve a intentarlo!!");
-            } else {
-                String definicion = LibIO.solicitarString("Introducé la definicion de la palabra " + palabra + " en el diccionario: ", 2, 60);
-                diccionario.put(palabra, definicion);
-            }
-        } while (diccionario.containsKey(palabra));
+    public boolean anyadirPalabra(String palabra, String definicion) {
+        if (diccionario.containsKey(palabra))
+            return false;
+        diccionario.put(palabra, definicion);
+        return true;
     }
 
     /**
      * Solicitará la palabra a modificar y si existe pedirá su
      * definición y la modificará
      */
-    public void modificarPalabra() {
-        String palabra;
-        do {
-            palabra = LibIO.solicitarString("Introducé una palabra para modificar su definicion en el diccionario (o sal con exit): ", 2, 50);
-            if (palabra.equals("exit")) {
-                break;
-            }
-            if (diccionario.containsKey(palabra)) {
-                String definicion = LibIO.solicitarString("Introducé una nueva definicion de la palabra " + palabra + " en el diccionario: ", 2, 60);
-                diccionario.put(palabra, definicion);
-            }
-        } while (!diccionario.containsKey(palabra));
+    public boolean modificarPalabra(String palabra, String definicion) {
+        if (!diccionario.containsKey(palabra))
+            return false;
+        diccionario.put(palabra, definicion);
+        return true;
     }
 
     /**
      * Solicitará la palabra a borrar y si existe la borrará
      */
-    public void eliminarPalabra() {
-        String palabra;
-        do {
-            palabra = LibIO.solicitarString("Introducé una palabra para eliminarla del diccionario (o introducé exit para salir): ", 2, 50);
-            if (palabra.equals("exit")) {
-                return;
-            }
-            if (diccionario.containsKey(palabra)) {
-                diccionario.remove(palabra);
-                System.out.println("La palabra y su definicion han sido eliminada del diccionario correctamente");
+    public boolean eliminarPalabra(String palabra) {
+            if (!diccionario.containsKey(palabra)) {
+                return false;
             } else {
-                System.out.println("La palabra introducida no existe en el dicionario: ");
+                diccionario.remove(palabra);
+                return true;
             }
-        } while (!diccionario.containsKey(palabra));
     }
 
     /**
      * Solicitará la palabra a consultar y si existe, mostrará su definición
      */
-    public void consultarPalabra() {
-        String palabra;
-        palabra = LibIO.solicitarString("¿Que palabar quieres consultar? (o si no quieres consultar ninguna palabera introducé exit para salir): ", 2, 50);
-        if (palabra.equals("exit")) {
-            return;
-        }
+    public String consultarPalabraString(String palabra) {
         if (diccionario.containsKey(palabra)) {
-            System.out.println("La definicion de la palabra " + palabra + " es: " + diccionario.get(palabra));
-        } else {
-            System.out.println("La palabra introducida no existe en el dicionario: ");
+            return diccionario.get(palabra);
         }
+        return null;
+    }
+        public boolean consultarPalabraBoolean(String palabra) {
+            return diccionario.containsKey(palabra);
+        }
+    public String consultarPalabra(String definicion) {
+        for (Map.Entry<String, String> entry : diccionario.entrySet()) {
+            if (entry.getValue().equals(definicion)) {
+                return entry.getKey();
+            }
+        }
+        return null; // Si no se encuentra la definición, devuelve null
     }
 
     /**

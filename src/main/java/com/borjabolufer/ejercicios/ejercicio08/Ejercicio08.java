@@ -1,6 +1,8 @@
 package com.borjabolufer.ejercicios.ejercicio08;
 
 import com.borjabolufer.lib.ConsoleMenu;
+import com.borjabolufer.lib.LibIO;
+
 /**
  * Clase principal del ejercicio 8 que gestiona el diccionario mediante un menú interactivo.
  *
@@ -15,7 +17,7 @@ public class Ejercicio08 {
     /**
      * Constructor que inicializa el diccionario y el menú principal.
      */
-    public Ejercicio08(){
+    public Ejercicio08() {
         // Inicializamos el diccionario
         diccionario = new Diccionario();
 
@@ -36,7 +38,7 @@ public class Ejercicio08 {
                     break;
                 case 2:
                     diccionario.modificarPalabra();
-                break;
+                    break;
                 case 3:
                     diccionario.eliminarPalabra();
                     break;
@@ -44,11 +46,12 @@ public class Ejercicio08 {
                     diccionario.consultarPalabra();
                     break;
                 case 5:
+                    System.out.println("DICCIONARIO");
                     diccionario.mostrarDiccionario();
                     break;
                 default:
                     System.err.println("Introducé una opcion correcta");
             }
-        }while (opcion != 0);
+        } while (opcion != 0);
     }
 }
